@@ -3,80 +3,95 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Vinay D – Senior Java Architect with 18+ years in Java, Spring Boot, microservices, Kafka, AWS, GCP, MuleSoft and agentic AI.">
+<meta name="description" content="Vinay D – Senior Java Architect: full-stack (React, Angular, Spring Boot), DevOps, AWS/Azure/GCP and AI orchestration. 18+ years.">
 <meta name="author" content="Vinay D">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Vinay D · Senior Java Architect">
-<meta property="og:description" content="18+ years building Java microservices, event-driven platforms and AI agents across healthcare, telecom and supply chain.">
+<meta property="og:title" content="Vinay D · Senior Java Architect · AI Orchestration">
+<meta property="og:description" content="18+ years building full-stack Java platforms with DevOps on AWS, Azure and GCP, now orchestrating AI agents. Clients include BT, Telstra and Fresenius.">
 <meta property="og:url" content="https://dvinay82.github.io/">
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#2B55D9">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232B55D9'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3EVD%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0B1E1A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B7A62'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3EVD%3C/text%3E%3C/svg%3E">
 <title>Vinay D · Java Architect</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-/* Layout: blueprint-calm single column, 1080px max; hero pairs headline with a live service-topology diagram */
+/* Layout: dark "control room" band (nav + hero + live topology), then a light, airy body: stats → skills → capabilities → projects → contact */
 :root{
-  --bg:#F2F4F7; --surface:#FFFFFF; --ink:#141B27; --muted:#586377; --line:#D8DEE7;
-  --accent:#2B55D9; --accent-soft:#E3E9FB; --signal:#D9661A; --signal-soft:#FBEBDD;
-  --grid:rgba(43,85,217,.06);
-  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
-  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
-  --f-mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --bg:#F4F7F6; --surface:#FFFFFF; --ink:#0F1F1C; --muted:#536D67; --line:#D5E1DE;
+  --accent:#0B7A62; --accent-soft:#DDF1EB; --signal:#6A4BEF; --signal-soft:#ECE7FF;
+  --band:#0B1E1A; --band-glow:rgba(70,224,183,.16); --band-glow2:rgba(178,155,255,.14);
+  --f-display:"Sora", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Figtree", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0E131C; --surface:#151C28; --ink:#E7ECF4; --muted:#97A3B8; --line:#273246;
-  --accent:#7D9BFF; --accent-soft:#1D2944; --signal:#F2994A; --signal-soft:#3A2717;
-  --grid:rgba(125,155,255,.06); color-scheme:dark }}
+  --bg:#0A1412; --surface:#10201D; --ink:#E4EFEC; --muted:#93ADA7; --line:#21362F;
+  --accent:#3DD6AE; --accent-soft:#12332C; --signal:#A992FF; --signal-soft:#251F45;
+  --band:#071311; color-scheme:dark }}
 :root[data-theme="dark"]{
-  --bg:#0E131C; --surface:#151C28; --ink:#E7ECF4; --muted:#97A3B8; --line:#273246;
-  --accent:#7D9BFF; --accent-soft:#1D2944; --signal:#F2994A; --signal-soft:#3A2717;
-  --grid:rgba(125,155,255,.06); color-scheme:dark }
+  --bg:#0A1412; --surface:#10201D; --ink:#E4EFEC; --muted:#93ADA7; --line:#21362F;
+  --accent:#3DD6AE; --accent-soft:#12332C; --signal:#A992FF; --signal-soft:#251F45;
+  --band:#071311; color-scheme:dark }
+
+/* the band keeps one dark look in both themes by re-scoping the tokens */
+.dark-zone{
+  --ink:#EAF4F1; --muted:#A0BAB3; --surface:#112A25; --line:#24443D;
+  --accent:#46E0B7; --accent-soft:#143D34; --signal:#B29BFF; --signal-soft:#2B2452;
+  --bg:var(--band); color:var(--ink); color-scheme:dark;
+}
 
 *{box-sizing:border-box}
-body{background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.6;
-  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:32px 32px;}
-.wrap{max-width:1080px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
+body{background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.6}
+.wrap{max-width:1120px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
 a{color:var(--accent)}
 :focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
 .mono{font-family:var(--f-mono)}
-.eyebrow{font-family:var(--f-mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
-h1,h2,h3{font-family:var(--f-display); text-wrap:balance; margin:0; line-height:1.1}
+.eyebrow{font-family:var(--f-mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--accent)}
+h1,h2,h3{font-family:var(--f-display); text-wrap:balance; margin:0; line-height:1.12}
 
 /* nav */
-nav.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
-body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--bg)}
-nav.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:12px}
-.brand{font-family:var(--f-mono); font-size:14px; font-weight:500; color:var(--ink); text-decoration:none}
-.brand b{color:var(--accent); font-weight:500}
-.navlinks{display:flex; gap:20px; flex-wrap:wrap}
-.navlinks a{color:var(--muted); text-decoration:none; font-size:14px}
+nav.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:color-mix(in srgb, var(--band) 92%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--band)}
+nav.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:14px}
+.brand{display:flex; align-items:center; gap:10px; font-family:var(--f-display); font-weight:600; font-size:16px; color:var(--ink); text-decoration:none}
+.brand i{width:28px; height:28px; border-radius:7px; display:grid; place-items:center; font:600 12px var(--f-mono); font-style:normal; color:var(--band); background:linear-gradient(135deg,var(--accent),var(--signal))}
+.navlinks{display:flex; gap:22px; flex-wrap:wrap}
+.navlinks a{color:var(--muted); text-decoration:none; font-size:14px; font-weight:500}
 .navlinks a:hover{color:var(--ink)}
 
-/* hero */
-.hero{display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; padding-block:64px 48px}
+/* hero band */
+.heroband{background:
+  radial-gradient(600px 380px at 85% 20%, var(--band-glow), transparent 70%),
+  radial-gradient(520px 340px at 10% 110%, var(--band-glow2), transparent 70%),
+  var(--band);}
+.heroband{background-image:
+  radial-gradient(600px 380px at 85% 20%, var(--band-glow), transparent 70%),
+  radial-gradient(520px 340px at 10% 110%, var(--band-glow2), transparent 70%),
+  radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size:auto, auto, 22px 22px; background-color:var(--band)}
+.hero{display:grid; grid-template-columns:1.08fr .92fr; gap:48px; align-items:center; padding-block:64px 72px}
 .hero > *{min-width:0}
-.status{display:inline-flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:12px; color:var(--muted); border:1px solid var(--line); background:var(--surface); padding:6px 12px; border-radius:999px}
-.status i{width:8px;height:8px;border-radius:50%;background:#2E9E5B; box-shadow:0 0 0 3px color-mix(in srgb,#2E9E5B 25%,transparent)}
-.hero h1{font-size:clamp(40px,6vw,68px); font-weight:700; letter-spacing:-.02em; margin-top:20px}
-.hero h1 span{color:var(--accent)}
-.hero .role{font-family:var(--f-display); font-size:clamp(20px,2.4vw,26px); font-weight:500; margin-top:12px; color:var(--ink)}
-.hero p.lede{color:var(--muted); max-width:56ch; margin:18px 0 0; font-size:17px}
-.stackline{font-family:var(--f-mono); font-size:13px; color:var(--muted); margin-top:20px; display:flex; flex-wrap:wrap; gap:6px 14px}
-.stackline span::before{content:"› "; color:var(--signal)}
-.cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px}
-.btn{font:500 15px var(--f-body); display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:8px; border:1px solid var(--ink); background:var(--ink); color:var(--bg); cursor:pointer; text-decoration:none}
+.status{display:inline-flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:12.5px; color:var(--ink); border:1px solid var(--signal); background:var(--signal-soft); padding:6px 14px; border-radius:999px}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--accent); box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 25%,transparent)}
+.hero h1{font-size:clamp(42px,6.2vw,72px); font-weight:700; letter-spacing:-.03em; margin-top:22px}
+.hero h1 span{background:linear-gradient(90deg,var(--accent),var(--signal)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.hero .role{font-family:var(--f-display); font-size:clamp(18px,2.2vw,23px); font-weight:500; margin-top:14px; color:var(--ink)}
+.hero .role b{color:var(--accent); font-weight:600}
+.hero p.lede{color:var(--muted); max-width:58ch; margin:18px 0 0; font-size:17px}
+.stackline{font-family:var(--f-mono); font-size:13px; color:var(--muted); margin-top:22px; display:flex; flex-wrap:wrap; gap:8px}
+.stackline span{border:1px solid var(--line); padding:3px 10px; border-radius:6px; background:color-mix(in srgb,var(--surface) 60%,transparent)}
+.cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px}
+.btn{font:600 15px var(--f-body); display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:10px; border:1px solid var(--ink); background:var(--ink); color:var(--bg); cursor:pointer; text-decoration:none; transition:transform .15s}
 .btn.ghost{background:transparent; color:var(--ink); border-color:var(--line)}
 .btn.ghost:hover{border-color:var(--ink)}
 .btn:hover{transform:translateY(-1px)}
 
-.diagram{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px; position:relative}
+.diagram{background:color-mix(in srgb,var(--surface) 75%,transparent); border:1px solid var(--line); border-radius:16px; padding:16px; box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 .diagram .cap{display:flex; justify-content:space-between; font-family:var(--f-mono); font-size:11px; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px}
 .diagram svg{width:100%; height:auto; display:block}
-.diagram .node rect{fill:var(--bg); stroke:var(--line)}
+.diagram .node rect{fill:var(--band); stroke:var(--line)}
 .diagram .node.hl rect{fill:var(--accent-soft); stroke:var(--accent)}
 .diagram .node.ev rect{fill:var(--signal-soft); stroke:var(--signal)}
 .diagram text{font-family:var(--f-mono); font-size:11px; fill:var(--ink)}
@@ -86,102 +101,110 @@ nav.top .wrap{display:flex; align-items:center; justify-content:space-between; g
 .diagram circle.pkt.ev{fill:var(--signal)}
 
 /* stats */
-.stats{display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line); border-radius:14px; background:var(--surface); overflow:hidden}
-.stat{padding:22px 24px; border-right:1px solid var(--line)}
-.stat:last-child{border-right:0}
-.stat b{display:block; font-family:var(--f-display); font-size:36px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums}
-.stat span{display:block; color:var(--muted); font-size:14px; margin-top:8px}
+.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:-36px; position:relative}
+.stat{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px 22px; box-shadow:0 12px 30px -18px rgba(11,30,26,.35)}
+.stat b{display:block; font-family:var(--f-display); font-size:26px; font-weight:700; line-height:1.15; font-variant-numeric:tabular-nums}
+.stat span{display:block; color:var(--muted); font-size:14px; margin-top:6px}
 
-section{padding-block:72px 8px}
+section{padding-block:80px 8px}
 .sec-head{display:flex; justify-content:space-between; align-items:end; gap:24px; flex-wrap:wrap; margin-bottom:28px}
-.sec-head h2{font-size:clamp(28px,3.6vw,40px); font-weight:700; letter-spacing:-.01em; margin-top:8px}
-.sec-head p{color:var(--muted); max-width:46ch; margin:0}
+.sec-head h2{font-size:clamp(28px,3.6vw,40px); font-weight:700; letter-spacing:-.02em; margin-top:8px}
+.sec-head p{color:var(--muted); max-width:48ch; margin:0}
+
+/* skills */
+.skills{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
+.sgroup{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:20px 22px; min-width:0}
+.sgroup h3{font-family:var(--f-display); font-size:16px; font-weight:600; display:flex; align-items:center; gap:10px}
+.sgroup h3::before{content:""; width:10px; height:10px; border-radius:3px; background:linear-gradient(135deg,var(--accent),var(--signal))}
+.sgroup.wide{grid-column:1 / -1}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:14px}
+.chip{font-family:var(--f-mono); font-size:12.5px; padding:5px 10px; border-radius:7px; border:1px solid var(--line); background:var(--bg); color:var(--ink)}
+button.chip{cursor:pointer}
+button.chip.used{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
+button.chip:hover{border-color:var(--accent); color:var(--accent)}
+button.chip.on{background:var(--signal-soft); border-color:var(--signal); color:var(--ink)}
+.chip.key{background:var(--accent-soft); border-color:var(--accent); font-weight:500}
 
 /* capabilities */
-.caps{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden}
-.cap{background:var(--surface); padding:26px 24px; display:flex; flex-direction:column; gap:10px}
-.cap .ic{width:36px; height:36px; border-radius:8px; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent)}
+.caps{display:grid; grid-template-columns:repeat(4,1fr); gap:16px}
+.cap{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:24px 22px; display:flex; flex-direction:column; gap:10px; min-width:0}
+.cap.feature{background:linear-gradient(160deg,var(--accent-soft),var(--surface) 70%); border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
+.cap .ic{width:38px; height:38px; border-radius:10px; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent)}
+.cap.ai .ic{background:var(--signal-soft); color:var(--signal)}
 .cap .ic svg{width:20px;height:20px}
-.cap h3{font-size:19px; font-weight:700}
-.cap p{margin:0; color:var(--muted); font-size:15px}
-.cap .tags{font-family:var(--f-mono); font-size:12px; color:var(--ink); margin-top:auto; padding-top:6px}
+.cap h3{font-size:17px; font-weight:600}
+.cap p{margin:0; color:var(--muted); font-size:14.5px}
+.cap .tags{font-family:var(--f-mono); font-size:11.5px; color:var(--ink); margin-top:auto; padding-top:6px}
+.cap .flag{align-self:flex-start; font-family:var(--f-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); border-radius:999px; padding:1px 8px}
 
 /* experience */
 .filterbar{display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:14px; color:var(--muted); min-height:34px; margin-bottom:16px}
 .filterbar .pill{display:inline-flex; align-items:center; gap:8px; background:var(--signal-soft); color:var(--ink); border:1px solid var(--signal); padding:4px 6px 4px 12px; border-radius:999px; font-family:var(--f-mono); font-size:13px}
 .filterbar .pill button{border:0; background:transparent; color:var(--ink); cursor:pointer; font-size:16px; line-height:1; padding:2px 6px; border-radius:999px}
-.timeline{display:flex; flex-direction:column; gap:20px; position:relative}
-.job{display:grid; grid-template-columns:200px 1fr; gap:32px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:28px; transition:opacity .25s, border-color .25s}
+.timeline{display:flex; flex-direction:column; gap:16px}
+.job{display:grid; grid-template-columns:210px 1fr; gap:32px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:26px; transition:opacity .25s, border-color .25s}
 .job > *{min-width:0}
-.job.dim{opacity:.35}
-.job.match{border-color:var(--signal)}
-.job .meta .client{font-family:var(--f-display); font-size:20px; font-weight:700; line-height:1.2}
-.job .meta .domain{display:inline-block; margin-top:10px; font-family:var(--f-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:3px 8px; border-radius:4px}
-.job .meta .roleT{color:var(--muted); font-size:14px; margin-top:12px}
-.job h3{font-size:22px; font-weight:700}
-.job .ov{color:var(--muted); margin:8px 0 0; max-width:68ch}
-.job ul{margin:16px 0 0; padding:0; list-style:none; display:grid; gap:9px}
-.job li{padding-left:22px; position:relative; max-width:72ch}
-.job li::before{content:""; position:absolute; left:2px; top:.62em; width:8px; height:8px; border:2px solid var(--accent); border-radius:2px; transform:rotate(45deg)}
+.dim{opacity:.35}
+.match{border-color:var(--signal)!important; box-shadow:0 0 0 1px var(--signal)}
+.meta .client{font-family:var(--f-display); font-size:18px; font-weight:600; line-height:1.25}
+.domain{display:inline-block; margin-top:10px; font-family:var(--f-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:3px 8px; border-radius:4px}
+.meta .roleT{color:var(--muted); font-size:14px; margin-top:12px}
+.job h3{font-size:20px; font-weight:600}
+.job .ov{color:var(--muted); margin:8px 0 0; max-width:70ch}
+.job ul{margin:14px 0 0; padding:0; list-style:none; display:grid; gap:8px}
+.job li{padding-left:22px; position:relative; max-width:74ch}
+.job li::before{content:""; position:absolute; left:3px; top:.6em; width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 3px var(--accent-soft)}
 .job li strong{font-weight:600}
-.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:18px}
-.chip{font-family:var(--f-mono); font-size:12px; padding:4px 9px; border-radius:6px; border:1px solid var(--line); background:var(--bg); color:var(--ink); cursor:pointer}
-.chip:hover{border-color:var(--accent); color:var(--accent)}
-.chip.on{background:var(--signal-soft); border-color:var(--signal); color:var(--ink)}
-
-/* skills */
-.skills{background:var(--surface); border:1px solid var(--line); border-radius:14px}
-.srow{display:grid; grid-template-columns:220px 1fr; gap:24px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:baseline}
-.srow:last-child{border-bottom:0}
-.srow > *{min-width:0}
-.srow h3{font-family:var(--f-body); font-size:15px; font-weight:600}
-.srow .chips{margin-top:0}
-.hint{font-size:14px; color:var(--muted); margin:14px 0 0}
+.minis{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+.mini{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:22px 24px; display:flex; flex-direction:column; gap:6px; min-width:0; transition:opacity .25s, border-color .25s}
+.mini h3{font-size:18px; font-weight:600}
+.mini p{margin:4px 0 0; color:var(--muted)}
+.mini .chips{margin-top:10px}
+.sub-head{font-family:var(--f-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin:28px 0 12px}
 
 /* contact */
-.contact{margin-top:72px; padding-block:56px; border-top:1px solid var(--line)}
-.contact-card{display:grid; grid-template-columns:1.2fr 1fr; gap:32px; align-items:center; background:var(--ink); color:var(--bg); border-radius:18px; padding:44px}
+.contact{margin-top:64px; padding-block:24px 56px}
+.contact-card{display:grid; grid-template-columns:1.2fr 1fr; gap:32px; align-items:center; border-radius:20px; padding:44px;
+  background-image:radial-gradient(500px 300px at 100% 0%, var(--band-glow), transparent 70%), radial-gradient(400px 260px at 0% 100%, var(--band-glow2), transparent 70%); background-color:var(--band)}
 .contact-card > *{min-width:0}
-.contact-card h2{font-size:clamp(28px,4vw,42px); font-weight:700}
-.contact-card p{opacity:.75; margin:12px 0 0; max-width:48ch}
-.mailbox{background:color-mix(in srgb, var(--bg) 8%, transparent); border:1px solid color-mix(in srgb, var(--bg) 22%, transparent); border-radius:12px; padding:18px; display:flex; flex-direction:column; gap:12px}
+.contact-card h2{font-size:clamp(26px,3.8vw,40px); font-weight:700; letter-spacing:-.02em}
+.contact-card p{color:var(--muted); margin:12px 0 0; max-width:50ch}
+.mailbox{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px; display:flex; flex-direction:column; gap:12px}
 .mailbox .addr{font-family:var(--f-mono); font-size:17px; user-select:all; word-break:break-all}
 .mailbox .row{display:flex; gap:10px; flex-wrap:wrap}
-.mailbox .btn{background:var(--bg); color:var(--ink); border-color:var(--bg)}
-.mailbox .btn.ghost{background:transparent; color:var(--bg); border-color:color-mix(in srgb, var(--bg) 35%, transparent)}
-.toast{font-family:var(--f-mono); font-size:12px; opacity:.8; min-height:18px}
-footer{padding-block:24px 40px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+.toast{font-family:var(--f-mono); font-size:12px; color:var(--muted); min-height:18px}
+footer{padding-block:8px 40px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
 
-/* entrance */
 @media (prefers-reduced-motion: no-preference){
   .rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
   .rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}
   @keyframes rise{from{transform:translateY(10px)}to{transform:none}}
 }
 
-@media (max-width:880px){
-  .hero{grid-template-columns:1fr; padding-block:40px 32px; gap:32px}
+@media (max-width:960px){
   .caps{grid-template-columns:1fr 1fr}
-  .job{grid-template-columns:1fr; gap:16px; padding:22px}
-  .srow{grid-template-columns:1fr; gap:10px}
-  .contact-card{grid-template-columns:1fr; padding:28px}
   .stats{grid-template-columns:1fr 1fr}
-  .stat:nth-child(2){border-right:0}
-  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr; padding-block:40px 64px; gap:32px}
+  .job{grid-template-columns:1fr; gap:14px; padding:22px}
+  .skills, .minis{grid-template-columns:1fr}
+  .contact-card{grid-template-columns:1fr; padding:28px}
 }
 @media (max-width:560px){
   .caps{grid-template-columns:1fr}
   .navlinks{display:none}
-  .stat{padding:18px}
-  .stat b{font-size:30px}
+  .stat{padding:16px}
+  .stat b{font-size:21px}
 }
 
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
 </style>
 </head>
 <body>
+<div class="dark-zone">
 <nav class="top"><div class="wrap">
-  <a class="brand" href="#top">vinay<b>.d</b> / java-architect</a>
+  <a class="brand" href="#top"><i>VD</i>Vinay D</a>
   <div class="navlinks">
     <a href="#skills">Skills</a>
     <a href="#capabilities">Capabilities</a>
@@ -190,15 +213,15 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-
   </div>
 </div></nav>
 
-<main class="wrap" id="top">
-  <header class="hero">
+<div class="heroband" id="top">
+  <header class="hero wrap">
     <div>
-      <span class="status rise"><i></i>Open to architecture &amp; senior engineering roles</span>
+      <span class="status rise"><i></i>Open to AI orchestrator &amp; architect roles</span>
       <h1 class="rise d1">Vinay D<span>.</span></h1>
-      <div class="role rise d1">Senior Java Architect &amp; Developer</div>
-      <p class="lede rise d2">18+ years designing and building Java systems for healthcare, telecom and supply chain. I build microservices, event-driven platforms and secure APIs on AWS and GCP, and I now add agentic AI to real business workflows.</p>
+      <div class="role rise d1">Senior Java Architect · <b>Full-stack &amp; DevOps</b> · AI orchestration</div>
+      <p class="lede rise d2">18+ years designing and shipping software for healthcare, telecom and supply chain. I work across the whole stack, from React and Angular front ends to Spring Boot microservices, Kafka and the CI/CD pipelines that run them on AWS, Azure and GCP. Today I build and orchestrate AI agents that carry out real business workflows.</p>
       <div class="stackline rise d2">
-        <span>Java 8/17</span><span>Spring Boot</span><span>Microservices</span><span>Kafka</span><span>AWS · GCP</span><span>MuleSoft</span><span>Agentic AI</span>
+        <span>Java 17</span><span>Spring Boot</span><span>React</span><span>Angular</span><span>Kafka</span><span>AWS · Azure · GCP</span><span>Docker · K8s</span><span>Agentic AI</span>
       </div>
       <div class="cta rise d3">
         <a class="btn" href="#skills">Explore my skills</a>
@@ -206,53 +229,53 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-
       </div>
     </div>
 
-    <figure class="diagram rise d2" aria-label="Diagram of an event-driven microservice architecture I typically design">
-      <div class="cap"><span>typical topology</span><span>event-driven</span></div>
+    <figure class="diagram rise d2" style="margin:0" aria-label="Diagram of a full-stack, event-driven system with an AI orchestrator, the kind I design">
+      <div class="cap"><span>typical topology</span><span>full stack · event-driven</span></div>
       <svg viewBox="0 0 440 330" role="img" aria-hidden="true">
-        <!-- wires -->
-        <path id="w1" class="wire" d="M70 60 H150"/>
+        <path id="w1" class="wire" d="M90 60 H150"/>
         <path id="w2" class="wire" d="M230 60 H290 V100"/>
         <path id="w3" class="wire" d="M190 80 V140"/>
         <path id="w4" class="wire" d="M190 180 V215"/>
         <path id="w5" class="wire" d="M150 240 H95 V275"/>
         <path id="w6" class="wire" d="M230 240 H290 V275"/>
-        <path id="w7" class="wire" d="M330 120 V160 H230"/>
+        <path id="w7" class="wire" d="M330 140 V160 H250"/>
         <path id="w8" class="wire" d="M190 260 V275"/>
-        <!-- nodes -->
-        <g class="node"><rect x="10" y="40" width="60" height="40" rx="8"/><text x="40" y="58" text-anchor="middle">client</text><text class="sub" x="40" y="71" text-anchor="middle">React</text></g>
+        <g class="node"><rect x="8" y="40" width="82" height="40" rx="8"/><text x="49" y="58" text-anchor="middle">web-ui</text><text class="sub" x="49" y="71" text-anchor="middle">React · Angular</text></g>
         <g class="node hl"><rect x="150" y="40" width="80" height="40" rx="8"/><text x="190" y="58" text-anchor="middle">gateway</text><text class="sub" x="190" y="71" text-anchor="middle">OAuth2 · JWT</text></g>
-        <g class="node"><rect x="290" y="100" width="130" height="40" rx="8"/><text x="355" y="118" text-anchor="middle">ai-agent</text><text class="sub" x="355" y="131" text-anchor="middle">PO · invoice flow</text></g>
+        <g class="node ev"><rect x="275" y="100" width="150" height="40" rx="8"/><text x="350" y="118" text-anchor="middle">ai-orchestrator</text><text class="sub" x="350" y="131" text-anchor="middle">agents · LLMs</text></g>
         <g class="node hl"><rect x="130" y="140" width="120" height="40" rx="8"/><text x="190" y="158" text-anchor="middle">order-service</text><text class="sub" x="190" y="171" text-anchor="middle">Spring Boot 17</text></g>
         <g class="node ev"><rect x="150" y="215" width="80" height="45" rx="8"/><text x="190" y="235" text-anchor="middle">kafka</text><text class="sub" x="190" y="249" text-anchor="middle">events</text></g>
-        <g class="node"><rect x="40" y="275" width="110" height="40" rx="8"/><text x="95" y="293" text-anchor="middle">lambda</text><text class="sub" x="95" y="306" text-anchor="middle">SNS · SQS</text></g>
+        <g class="node"><rect x="40" y="275" width="110" height="40" rx="8"/><text x="95" y="293" text-anchor="middle">functions</text><text class="sub" x="95" y="306" text-anchor="middle">Lambda · Azure</text></g>
         <g class="node"><rect x="160" y="275" width="60" height="40" rx="8"/><text x="190" y="293" text-anchor="middle">db</text><text class="sub" x="190" y="306" text-anchor="middle">Postgres</text></g>
         <g class="node"><rect x="240" y="275" width="110" height="40" rx="8"/><text x="295" y="293" text-anchor="middle">billing-svc</text><text class="sub" x="295" y="306" text-anchor="middle">consumer</text></g>
-        <!-- packets -->
         <g class="pkts">
           <circle class="pkt" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle>
           <circle class="pkt" r="4"><animateMotion dur="2.4s" begin=".6s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle>
-          <circle class="pkt" r="4"><animateMotion dur="3s" begin=".3s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle>
+          <circle class="pkt ev" r="4"><animateMotion dur="3s" begin=".3s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle>
           <circle class="pkt ev" r="4"><animateMotion dur="1.8s" begin="1s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle>
           <circle class="pkt ev" r="4"><animateMotion dur="2.2s" begin="1.4s" repeatCount="indefinite"><mpath href="#w5"/></animateMotion></circle>
           <circle class="pkt ev" r="4"><animateMotion dur="2.2s" begin="1.8s" repeatCount="indefinite"><mpath href="#w6"/></animateMotion></circle>
-          <circle class="pkt" r="4"><animateMotion dur="2.6s" begin="2s" repeatCount="indefinite"><mpath href="#w7"/></animateMotion></circle>
-          <circle class="pkt ev" r="3"><animateMotion dur="1.2s" begin=".9s" repeatCount="indefinite"><mpath href="#w8"/></animateMotion></circle>
+          <circle class="pkt ev" r="4"><animateMotion dur="2.6s" begin="2s" repeatCount="indefinite"><mpath href="#w7"/></animateMotion></circle>
+          <circle class="pkt" r="3"><animateMotion dur="1.2s" begin=".9s" repeatCount="indefinite"><mpath href="#w8"/></animateMotion></circle>
         </g>
       </svg>
     </figure>
   </header>
+</div>
+</div>
 
+<main class="wrap">
   <div class="stats" role="list">
-    <div class="stat" role="listitem"><b>18+</b><span>years building Java systems</span></div>
-    <div class="stat" role="listitem"><b>3</b><span>domains: healthcare, telecom, supply chain</span></div>
-    <div class="stat" role="listitem"><b>2</b><span>clouds in production: AWS and GCP</span></div>
-    <div class="stat" role="listitem"><b>UK·US·IN</b><span>clients including BT and Fresenius</span></div>
+    <div class="stat" role="listitem"><b>18+ years</b><span>building enterprise Java systems</span></div>
+    <div class="stat" role="listitem"><b>Full stack</b><span>React, Angular, Java and DevOps</span></div>
+    <div class="stat" role="listitem"><b>AWS · Azure · GCP</b><span>three clouds, end to end</span></div>
+    <div class="stat" role="listitem"><b>BT · Telstra</b><span>plus Fresenius and supply chain clients</span></div>
   </div>
 
   <section id="skills">
     <div class="sec-head">
       <div><div class="eyebrow">Toolbox</div><h2>Technical skills</h2></div>
-      <p>Grouped by area. Click any skill with a blue outline to see the projects where I used it.</p>
+      <p>Grouped by area, with core strengths shaded. Click any outlined skill to see the projects where I used it.</p>
     </div>
     <div class="skills" id="skillgrid"></div>
   </section>
@@ -260,44 +283,59 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-
   <section id="capabilities">
     <div class="sec-head">
       <div><div class="eyebrow">What I bring</div><h2>Capabilities</h2></div>
-      <p>From system design to the CI/CD pipeline, I own a service through design, build, testing and running in production.</p>
+      <p>I take a product from the UI to the pipeline to production, and increasingly hand the repetitive work to AI agents.</p>
     </div>
     <div class="caps">
+      <article class="cap feature ai">
+        <span class="flag">Focus</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><circle cx="4.5" cy="5" r="2"/><circle cx="19.5" cy="5" r="2"/><circle cx="4.5" cy="19" r="2"/><circle cx="19.5" cy="19" r="2"/><path d="M6 6.5l3.8 3.8M18 6.5l-3.8 3.8M6 17.5l3.8-3.8M18 17.5l-3.8-3.8"/></svg></div>
+        <h3>AI orchestration</h3>
+        <p>Multi-step AI agents that run PO and invoice processes end to end, plus agents that watch logs and resolve issues.</p>
+        <div class="tags">LangChain · LangGraph · Claude Code</div>
+      </article>
+      <article class="cap feature">
+        <span class="flag">Focus</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 9l2 2-2 2M11 13h4"/></svg></div>
+        <h3>Full-stack development</h3>
+        <p>React and Angular front ends on Spring Boot APIs, built as one product rather than separate halves.</p>
+        <div class="tags">React · Angular · Spring Boot</div>
+      </article>
+      <article class="cap feature">
+        <span class="flag">Focus</span>
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12a8 8 0 0114-5.3M20 12a8 8 0 01-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></div>
+        <h3>DevOps &amp; CI/CD</h3>
+        <p>Containerized builds, Terraform infrastructure and Jenkins, GitLab and Bamboo pipelines with quality gates.</p>
+        <div class="tags">Docker · Kubernetes · Terraform</div>
+      </article>
+      <article class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 01-.5-8A6 6 0 0118 9a4.5 4.5 0 01-1 9H7z"/></svg></div>
+        <h3>Multi-cloud architecture</h3>
+        <p>AWS designs with WAF, Route 53, load balancers, ECS/EKS and Lambda, plus Azure and GCP Cloud Run.</p>
+        <div class="tags">AWS · Azure · GCP</div>
+      </article>
       <article class="cap">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="8.5" y="14" width="7" height="7" rx="1.5"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg></div>
         <h3>Microservices &amp; APIs</h3>
-        <p>REST and GraphQL services on Spring Boot, with JPA/Hibernate persistence and clean, versioned contracts.</p>
+        <p>REST and GraphQL services on Spring Boot with JPA/Hibernate and clean, versioned contracts.</p>
         <div class="tags">Spring Boot · Spring Cloud · GraphQL</div>
       </article>
       <article class="cap">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></div>
-        <h3>Event-driven architecture</h3>
-        <p>Decoupled, reactive services with Kafka and SNS/SQS, including DLQs and circuit breakers for reliable async flows.</p>
+        <h3>Event-driven systems</h3>
+        <p>Decoupled services on Kafka and SNS/SQS, with dead-letter queues and circuit breakers.</p>
         <div class="tags">Kafka · SNS/SQS · Resilience4j</div>
       </article>
       <article class="cap">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
         <h3>Security &amp; identity</h3>
-        <p>Platform-wide authentication and authorization with Spring Security filter chains, OAuth2, JWT and API gateways.</p>
+        <p>Platform-wide authentication with Spring Security, OAuth2, JWT and API gateways.</p>
         <div class="tags">OAuth2 · JWT · Apigee · WSO2</div>
-      </article>
-      <article class="cap">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 01-.5-8A6 6 0 0118 9a4.5 4.5 0 01-1 9H7z"/></svg></div>
-        <h3>Cloud architecture</h3>
-        <p>AWS designs with WAF, Route 53, NLB/ALB, ECS/EKS and Lambda, plus GCP Cloud Run. Infrastructure is written in Terraform.</p>
-        <div class="tags">AWS · GCP · Terraform · Kubernetes</div>
       </article>
       <article class="cap">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5l3 8M16 7.5l-3 8M8.5 6h7"/></svg></div>
         <h3>Enterprise integration</h3>
-        <p>MuleSoft flows, connections to third-party systems and EHR platforms, and migrating MuleSoft apps to Java microservices.</p>
+        <p>MuleSoft flows, SAP, Odoo and EHR integrations, and MuleSoft-to-Java migrations.</p>
         <div class="tags">MuleSoft · SAP · Odoo · EHR</div>
-      </article>
-      <article class="cap">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
-        <h3>Agentic AI</h3>
-        <p>AI agents that run PO and invoice processes end to end, and agents that monitor logs and resolve issues.</p>
-        <div class="tags">LangChain · LangGraph · Claude Code</div>
       </article>
     </div>
   </section>
@@ -310,7 +348,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-
     <div class="filterbar" id="filterbar" aria-live="polite"></div>
     <div class="timeline">
 
-      <article class="job" data-stack="React|Java 17|Spring Boot|Spring MVC|Spring Security|Spring Data JPA|REST APIs|Microservices|MongoDB|GCP|AWS|Agentic AI|GitLab CI|JWT|LangChain|LangGraph">
+      <article class="job" data-stack="React|Java 17|Spring Boot|Spring MVC|Spring Security|Spring Data JPA|REST APIs|Microservices|MongoDB|GCP|AWS|Agentic AI|AI orchestration|GitLab CI|JWT|LangChain|LangGraph">
         <div class="meta">
           <div class="client">Supply Chain Product</div>
           <span class="domain">Supply chain</span>
@@ -320,11 +358,11 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-
           <h3>AI-driven supply chain platform</h3>
           <p class="ov">Supply chain orchestration covering client and supplier management, purchase orders, invoices, a chatbot and AI recommendations.</p>
           <ul>
-            <li><strong>Built AI agents</strong> that complete the PO and invoice process end to end with minimal human input.</li>
+            <li><strong>Orchestrated AI agents</strong> that complete the PO and invoice process end to end with minimal human input.</li>
             <li>Built <strong>agentic log monitoring</strong> that finds and resolves issues automatically.</li>
+            <li>Built the product <strong>full stack</strong>, with a React UI on Spring Boot REST APIs.</li>
             <li>Designed <strong>platform-wide JWT authentication</strong> and authorization using Spring Security filter chains.</li>
-            <li>Built scheduled <strong>GCP Cloud Run</strong> jobs that pull PO data from customer SAP, Odoo and API sources.</li>
-            <li>Built scalable Spring Boot REST APIs and maintained CI/CD pipelines in GitLab.</li>
+            <li>Built scheduled <strong>GCP Cloud Run</strong> jobs that pull PO data from customer SAP, Odoo and API sources, and ran CI/CD in GitLab.</li>
           </ul>
           <div class="chips"></div>
         </div>
@@ -364,7 +402,7 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-
             <li>Built <strong>Kafka-based</strong> event flows to coordinate asynchronous transactions.</li>
             <li>Built REST APIs that give operations teams real-time payment status and transaction history.</li>
             <li>Designed Hibernate mappings for payment data, customer records and audit events.</li>
-            <li>Enforced quality gates with <strong>SonarQube</strong>, JUnit 5 and Mockito.</li>
+            <li>Shipped through <strong>Docker, Jenkins and OpenShift</strong>, with SonarQube, JUnit 5 and Mockito quality gates.</li>
           </ul>
           <div class="chips"></div>
         </div>
@@ -389,17 +427,31 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-
           <div class="chips"></div>
         </div>
       </article>
+    </div>
 
+    <div class="sub-head">Also delivered</div>
+    <div class="minis">
+      <article class="mini" data-stack="Java|Spring Boot|Microservices">
+        <span class="domain" style="align-self:flex-start;margin-top:0">Telecom · Australia</span>
+        <h3>Telstra</h3>
+        <p>Java engineering for Telstra, Australia's largest telecommunications provider.</p>
+        <div class="chips"></div>
+      </article>
+      <article class="mini" data-stack="React|Angular|Spring Boot|Azure|Docker">
+        <span class="domain" style="align-self:flex-start;margin-top:0">Small business</span>
+        <h3>Apps for small businesses</h3>
+        <p>Designed, built and deployed full-stack apps for small businesses, from the UI to the cloud.</p>
+        <div class="chips"></div>
+      </article>
     </div>
   </section>
 
-
   <section class="contact" id="contact">
-    <div class="contact-card">
+    <div class="contact-card dark-zone">
       <div>
-        <div class="eyebrow" style="color:inherit;opacity:.6">Let's talk</div>
-        <h2 style="margin-top:8px">Building something that needs to scale?</h2>
-        <p>I'm happy to talk about architecture roles, platform modernization or bringing AI agents into your workflows.</p>
+        <div class="eyebrow">Let's talk</div>
+        <h2 style="margin-top:8px">Need someone to architect, build and orchestrate it?</h2>
+        <p>I'm happy to talk about AI orchestrator and architect roles, full-stack platform builds or modernizing your stack.</p>
       </div>
       <div class="mailbox">
         <div class="addr" id="email">dvinay82@gmail.com</div>
@@ -414,87 +466,83 @@ html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-
 
   <footer>
     <span>Vinay D · Senior Java Architect · India</span>
-    <span class="mono">java · spring · aws · gcp · ai</span>
+    <span class="mono">java · react · angular · devops · aws · azure · gcp · ai</span>
   </footer>
 </main>
 
 <script>
 (function(){
+  const key = new Set(["Java 17","Spring Boot","Microservices","React","Angular","Kafka","AWS","Azure","GCP","Docker","Kubernetes","Terraform","AI orchestration","Agentic AI"]);
   const skills = [
-    ["Languages & frameworks", ["Java 17","Java 8","Spring Boot","Spring MVC","Spring Cloud","Spring Data JPA","Spring Security","Hibernate","JPA","JDBC","Servlets","GraphQL","REST APIs","Microservices","MuleSoft"]],
-    ["Architecture", ["Event-driven","System design","Distributed systems","Design patterns","Resilience4j","SOLID","OOP"]],
+    ["AI & orchestration", ["AI orchestration","Agentic AI","LangChain","LangGraph","Claude Code","GitHub Copilot","Cursor"]],
+    ["Front end", ["React","Angular","JavaScript","HTML5","CSS","Node.js","jQuery"]],
+    ["Back end & frameworks", ["Java 17","Java 8","Spring Boot","Spring MVC","Spring Cloud","Spring Data JPA","Spring Security","Hibernate","JPA","GraphQL","REST APIs","Microservices","MuleSoft"]],
+    ["DevOps & CI/CD", ["Docker","Kubernetes","Terraform","OpenShift","Jenkins","GitLab CI","Bamboo","Maven","Gradle","GitHub"]],
+    ["Cloud", ["AWS","Azure","GCP","AWS Lambda","ECS","EKS","EC2","S3","RDS","DynamoDB","API Gateway","IAM","CloudWatch"]],
+    ["Messaging & architecture", ["Kafka","SNS/SQS","DLQ","Event-driven","Distributed systems","Resilience4j","Design patterns","SOLID"]],
     ["Security", ["Spring Security","OAuth2","JWT","Apigee","WSO2","Mutual TLS"]],
-    ["Messaging", ["Kafka","SNS/SQS","DLQ"]],
-    ["Cloud", ["AWS","AWS Lambda","ECS","EKS","EC2","S3","RDS","DynamoDB","API Gateway","IAM","CloudWatch","GCP","OpenShift"]],
-    ["Databases", ["PostgreSQL","MySQL","Oracle","MongoDB","Couchbase","Redis","SQL"]],
-    ["DevOps & CI/CD", ["Docker","Kubernetes","Terraform","Jenkins","GitLab CI","Bamboo","Maven","Gradle","GitHub"]],
-    ["Testing & quality", ["JUnit 5","Mockito","MockMvc","Postman","Swagger","SonarQube","PMD","Splunk"]],
-    ["Frontend", ["React","JavaScript","HTML5","CSS","Node.js","jQuery"]],
-    ["AI tooling", ["Agentic AI","LangChain","LangGraph","Claude Code","GitHub Copilot","Cursor"]]
+    ["Databases", ["PostgreSQL","MySQL","Oracle","MongoDB","Couchbase","DynamoDB","Redis"]],
+    ["Testing & quality", ["JUnit 5","Mockito","MockMvc","Postman","Swagger","SonarQube","PMD","Splunk"], true]
   ];
-  const jobs = [...document.querySelectorAll('.job')];
-  const used = new Set();
-  jobs.forEach(j => j.dataset.stack.split('|').forEach(s => used.add(s)));
+  const cards = [...document.querySelectorAll('.job, .mini')];
+  const stackOf = c => c.dataset.stack ? c.dataset.stack.split('|') : [];
+  const used = new Set(); cards.forEach(c => stackOf(c).forEach(s => used.add(s)));
+  let active = null;
 
   function chip(name){
+    if(!used.has(name)){
+      const s = document.createElement('span'); s.className = 'chip' + (key.has(name) ? ' key' : ''); s.textContent = name; return s;
+    }
     const b = document.createElement('button');
-    b.type = 'button'; b.className = 'chip'; b.textContent = name; b.dataset.skill = name;
-    if(!used.has(name)){ b.disabled = true; b.style.cursor = 'default'; b.style.color = 'var(--muted)'; }
+    b.type = 'button'; b.className = 'chip used' + (key.has(name) ? ' key' : ''); b.textContent = name; b.dataset.skill = name;
     b.addEventListener('click', () => setFilter(active === name ? null : name));
     return b;
   }
-  jobs.forEach(j => {
-    const box = j.querySelector('.chips');
-    j.dataset.stack.split('|').forEach(s => box.appendChild(chip(s)));
-  });
+  cards.forEach(c => { const box = c.querySelector('.chips'); stackOf(c).forEach(s => box.appendChild(chip(s))); });
   const grid = document.getElementById('skillgrid');
-  skills.forEach(([g, list]) => {
-    const row = document.createElement('div'); row.className = 'srow';
+  skills.forEach(([g, list, wide]) => {
+    const box = document.createElement('div'); box.className = 'sgroup' + (wide ? ' wide' : '');
     const h = document.createElement('h3'); h.textContent = g;
     const c = document.createElement('div'); c.className = 'chips';
-    list.forEach(s => { const b = chip(s); if(used.has(s)) b.style.borderColor = 'var(--accent)'; c.appendChild(b); });
-    row.append(h, c); grid.appendChild(row);
+    list.forEach(s => c.appendChild(chip(s)));
+    box.append(h, c); grid.appendChild(box);
   });
 
-  let active = null;
   const bar = document.getElementById('filterbar');
   function setFilter(name){
     active = name;
-    document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c.dataset.skill === name));
+    document.querySelectorAll('button.chip').forEach(c => c.classList.toggle('on', c.dataset.skill === name));
     let n = 0;
-    jobs.forEach(j => {
-      const has = name && j.dataset.stack.split('|').includes(name);
+    cards.forEach(c => {
+      const has = !!name && stackOf(c).includes(name);
       if(has) n++;
-      j.classList.toggle('match', !!has);
-      j.classList.toggle('dim', !!name && !has);
+      c.classList.toggle('match', has);
+      c.classList.toggle('dim', !!name && !has);
     });
     bar.innerHTML = '';
     if(name){
-      const p = document.createElement('span'); p.className = 'pill';
-      p.textContent = name;
+      const p = document.createElement('span'); p.className = 'pill'; p.textContent = name;
       const x = document.createElement('button'); x.type = 'button'; x.setAttribute('aria-label','Clear filter'); x.textContent = '×';
       x.onclick = () => setFilter(null);
       p.appendChild(x);
       const t = document.createElement('span'); t.textContent = n + (n === 1 ? ' project uses this' : ' projects use this');
       bar.append(p, t);
-      if(!document.getElementById('experience').contains(document.activeElement)){
-        document.getElementById('experience').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+      const exp = document.getElementById('experience');
+      if(!exp.contains(document.activeElement)){
+        exp.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
       }
     }
   }
 
-  // reduced motion: stop packets
   if (matchMedia('(prefers-reduced-motion: reduce)').matches){
     document.querySelectorAll('.pkts').forEach(g => g.remove());
   }
 
-  // copy email
   const btn = document.getElementById('copyBtn'), toast = document.getElementById('toast'), addr = document.getElementById('email');
   btn.addEventListener('click', () => {
     const fallback = () => { const r = document.createRange(); r.selectNodeContents(addr); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast.textContent = 'Selected. Press Ctrl/⌘ + C to copy.'; };
-    try {
-      navigator.clipboard.writeText(addr.textContent).then(() => { toast.textContent = 'Copied to clipboard'; }, fallback);
-    } catch(e){ fallback(); }
+    try { navigator.clipboard.writeText(addr.textContent).then(() => { toast.textContent = 'Copied to clipboard'; }, fallback); }
+    catch(e){ fallback(); }
   });
 })();
 </script>
