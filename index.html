@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Vinay D – Senior Java Architect with 18+ years in Java, Spring Boot, microservices, Kafka, AWS, GCP, MuleSoft and agentic AI.">
+<meta name="author" content="Vinay D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vinay D · Senior Java Architect">
+<meta property="og:description" content="18+ years building Java microservices, event-driven platforms and AI agents across healthcare, telecom and supply chain.">
+<meta property="og:url" content="https://dvinay82.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#2B55D9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232B55D9'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='15' font-weight='700' fill='white' text-anchor='middle'%3EVD%3C/text%3E%3C/svg%3E">
+<title>Vinay D · Java Architect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: blueprint-calm single column, 1080px max; hero pairs headline with a live service-topology diagram */
+:root{
+  --bg:#F2F4F7; --surface:#FFFFFF; --ink:#141B27; --muted:#586377; --line:#D8DEE7;
+  --accent:#2B55D9; --accent-soft:#E3E9FB; --signal:#D9661A; --signal-soft:#FBEBDD;
+  --grid:rgba(43,85,217,.06);
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E131C; --surface:#151C28; --ink:#E7ECF4; --muted:#97A3B8; --line:#273246;
+  --accent:#7D9BFF; --accent-soft:#1D2944; --signal:#F2994A; --signal-soft:#3A2717;
+  --grid:rgba(125,155,255,.06); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#0E131C; --surface:#151C28; --ink:#E7ECF4; --muted:#97A3B8; --line:#273246;
+  --accent:#7D9BFF; --accent-soft:#1D2944; --signal:#F2994A; --signal-soft:#3A2717;
+  --grid:rgba(125,155,255,.06); color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.6;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:32px 32px;}
+.wrap{max-width:1080px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+.mono{font-family:var(--f-mono)}
+.eyebrow{font-family:var(--f-mono); font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+h1,h2,h3{font-family:var(--f-display); text-wrap:balance; margin:0; line-height:1.1}
+
+/* nav */
+nav.top{position:sticky; top:env(safe-area-inset-top,0px); z-index:5; background:color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--line)}
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:10; background:var(--bg)}
+nav.top .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:12px}
+.brand{font-family:var(--f-mono); font-size:14px; font-weight:500; color:var(--ink); text-decoration:none}
+.brand b{color:var(--accent); font-weight:500}
+.navlinks{display:flex; gap:20px; flex-wrap:wrap}
+.navlinks a{color:var(--muted); text-decoration:none; font-size:14px}
+.navlinks a:hover{color:var(--ink)}
+
+/* hero */
+.hero{display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center; padding-block:64px 48px}
+.hero > *{min-width:0}
+.status{display:inline-flex; align-items:center; gap:8px; font-family:var(--f-mono); font-size:12px; color:var(--muted); border:1px solid var(--line); background:var(--surface); padding:6px 12px; border-radius:999px}
+.status i{width:8px;height:8px;border-radius:50%;background:#2E9E5B; box-shadow:0 0 0 3px color-mix(in srgb,#2E9E5B 25%,transparent)}
+.hero h1{font-size:clamp(40px,6vw,68px); font-weight:700; letter-spacing:-.02em; margin-top:20px}
+.hero h1 span{color:var(--accent)}
+.hero .role{font-family:var(--f-display); font-size:clamp(20px,2.4vw,26px); font-weight:500; margin-top:12px; color:var(--ink)}
+.hero p.lede{color:var(--muted); max-width:56ch; margin:18px 0 0; font-size:17px}
+.stackline{font-family:var(--f-mono); font-size:13px; color:var(--muted); margin-top:20px; display:flex; flex-wrap:wrap; gap:6px 14px}
+.stackline span::before{content:"› "; color:var(--signal)}
+.cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px}
+.btn{font:500 15px var(--f-body); display:inline-flex; align-items:center; gap:8px; padding:11px 18px; border-radius:8px; border:1px solid var(--ink); background:var(--ink); color:var(--bg); cursor:pointer; text-decoration:none}
+.btn.ghost{background:transparent; color:var(--ink); border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+
+.diagram{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px; position:relative}
+.diagram .cap{display:flex; justify-content:space-between; font-family:var(--f-mono); font-size:11px; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px}
+.diagram svg{width:100%; height:auto; display:block}
+.diagram .node rect{fill:var(--bg); stroke:var(--line)}
+.diagram .node.hl rect{fill:var(--accent-soft); stroke:var(--accent)}
+.diagram .node.ev rect{fill:var(--signal-soft); stroke:var(--signal)}
+.diagram text{font-family:var(--f-mono); font-size:11px; fill:var(--ink)}
+.diagram text.sub{fill:var(--muted); font-size:9.5px}
+.diagram path.wire{stroke:var(--line); stroke-width:1.5; fill:none}
+.diagram circle.pkt{fill:var(--accent)}
+.diagram circle.pkt.ev{fill:var(--signal)}
+
+/* stats */
+.stats{display:grid; grid-template-columns:repeat(4,1fr); border:1px solid var(--line); border-radius:14px; background:var(--surface); overflow:hidden}
+.stat{padding:22px 24px; border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{display:block; font-family:var(--f-display); font-size:36px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums}
+.stat span{display:block; color:var(--muted); font-size:14px; margin-top:8px}
+
+section{padding-block:72px 8px}
+.sec-head{display:flex; justify-content:space-between; align-items:end; gap:24px; flex-wrap:wrap; margin-bottom:28px}
+.sec-head h2{font-size:clamp(28px,3.6vw,40px); font-weight:700; letter-spacing:-.01em; margin-top:8px}
+.sec-head p{color:var(--muted); max-width:46ch; margin:0}
+
+/* capabilities */
+.caps{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden}
+.cap{background:var(--surface); padding:26px 24px; display:flex; flex-direction:column; gap:10px}
+.cap .ic{width:36px; height:36px; border-radius:8px; display:grid; place-items:center; background:var(--accent-soft); color:var(--accent)}
+.cap .ic svg{width:20px;height:20px}
+.cap h3{font-size:19px; font-weight:700}
+.cap p{margin:0; color:var(--muted); font-size:15px}
+.cap .tags{font-family:var(--f-mono); font-size:12px; color:var(--ink); margin-top:auto; padding-top:6px}
+
+/* experience */
+.filterbar{display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:14px; color:var(--muted); min-height:34px; margin-bottom:16px}
+.filterbar .pill{display:inline-flex; align-items:center; gap:8px; background:var(--signal-soft); color:var(--ink); border:1px solid var(--signal); padding:4px 6px 4px 12px; border-radius:999px; font-family:var(--f-mono); font-size:13px}
+.filterbar .pill button{border:0; background:transparent; color:var(--ink); cursor:pointer; font-size:16px; line-height:1; padding:2px 6px; border-radius:999px}
+.timeline{display:flex; flex-direction:column; gap:20px; position:relative}
+.job{display:grid; grid-template-columns:200px 1fr; gap:32px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:28px; transition:opacity .25s, border-color .25s}
+.job > *{min-width:0}
+.job.dim{opacity:.35}
+.job.match{border-color:var(--signal)}
+.job .meta .client{font-family:var(--f-display); font-size:20px; font-weight:700; line-height:1.2}
+.job .meta .domain{display:inline-block; margin-top:10px; font-family:var(--f-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); background:var(--accent-soft); padding:3px 8px; border-radius:4px}
+.job .meta .roleT{color:var(--muted); font-size:14px; margin-top:12px}
+.job h3{font-size:22px; font-weight:700}
+.job .ov{color:var(--muted); margin:8px 0 0; max-width:68ch}
+.job ul{margin:16px 0 0; padding:0; list-style:none; display:grid; gap:9px}
+.job li{padding-left:22px; position:relative; max-width:72ch}
+.job li::before{content:""; position:absolute; left:2px; top:.62em; width:8px; height:8px; border:2px solid var(--accent); border-radius:2px; transform:rotate(45deg)}
+.job li strong{font-weight:600}
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:18px}
+.chip{font-family:var(--f-mono); font-size:12px; padding:4px 9px; border-radius:6px; border:1px solid var(--line); background:var(--bg); color:var(--ink); cursor:pointer}
+.chip:hover{border-color:var(--accent); color:var(--accent)}
+.chip.on{background:var(--signal-soft); border-color:var(--signal); color:var(--ink)}
+
+/* skills */
+.skills{background:var(--surface); border:1px solid var(--line); border-radius:14px}
+.srow{display:grid; grid-template-columns:220px 1fr; gap:24px; padding:18px 24px; border-bottom:1px solid var(--line); align-items:baseline}
+.srow:last-child{border-bottom:0}
+.srow > *{min-width:0}
+.srow h3{font-family:var(--f-body); font-size:15px; font-weight:600}
+.srow .chips{margin-top:0}
+.hint{font-size:14px; color:var(--muted); margin:14px 0 0}
+
+/* contact */
+.contact{margin-top:72px; padding-block:56px; border-top:1px solid var(--line)}
+.contact-card{display:grid; grid-template-columns:1.2fr 1fr; gap:32px; align-items:center; background:var(--ink); color:var(--bg); border-radius:18px; padding:44px}
+.contact-card > *{min-width:0}
+.contact-card h2{font-size:clamp(28px,4vw,42px); font-weight:700}
+.contact-card p{opacity:.75; margin:12px 0 0; max-width:48ch}
+.mailbox{background:color-mix(in srgb, var(--bg) 8%, transparent); border:1px solid color-mix(in srgb, var(--bg) 22%, transparent); border-radius:12px; padding:18px; display:flex; flex-direction:column; gap:12px}
+.mailbox .addr{font-family:var(--f-mono); font-size:17px; user-select:all; word-break:break-all}
+.mailbox .row{display:flex; gap:10px; flex-wrap:wrap}
+.mailbox .btn{background:var(--bg); color:var(--ink); border-color:var(--bg)}
+.mailbox .btn.ghost{background:transparent; color:var(--bg); border-color:color-mix(in srgb, var(--bg) 35%, transparent)}
+.toast{font-family:var(--f-mono); font-size:12px; opacity:.8; min-height:18px}
+footer{padding-block:24px 40px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+/* entrance */
+@media (prefers-reduced-motion: no-preference){
+  .rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}
+  @keyframes rise{from{transform:translateY(10px)}to{transform:none}}
+}
+
+@media (max-width:880px){
+  .hero{grid-template-columns:1fr; padding-block:40px 32px; gap:32px}
+  .caps{grid-template-columns:1fr 1fr}
+  .job{grid-template-columns:1fr; gap:16px; padding:22px}
+  .srow{grid-template-columns:1fr; gap:10px}
+  .contact-card{grid-template-columns:1fr; padding:28px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .caps{grid-template-columns:1fr}
+  .navlinks{display:none}
+  .stat{padding:18px}
+  .stat b{font-size:30px}
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="brand" href="#top">vinay<b>.d</b> / java-architect</a>
+  <div class="navlinks">
+    <a href="#skills">Skills</a>
+    <a href="#capabilities">Capabilities</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div></nav>
+
+<main class="wrap" id="top">
+  <header class="hero">
+    <div>
+      <span class="status rise"><i></i>Open to architecture &amp; senior engineering roles</span>
+      <h1 class="rise d1">Vinay D<span>.</span></h1>
+      <div class="role rise d1">Senior Java Architect &amp; Developer</div>
+      <p class="lede rise d2">18+ years designing and building Java systems for healthcare, telecom and supply chain. I build microservices, event-driven platforms and secure APIs on AWS and GCP, and I now add agentic AI to real business workflows.</p>
+      <div class="stackline rise d2">
+        <span>Java 8/17</span><span>Spring Boot</span><span>Microservices</span><span>Kafka</span><span>AWS · GCP</span><span>MuleSoft</span><span>Agentic AI</span>
+      </div>
+      <div class="cta rise d3">
+        <a class="btn" href="#skills">Explore my skills</a>
+        <a class="btn ghost" href="#contact">Get in touch</a>
+      </div>
+    </div>
+
+    <figure class="diagram rise d2" aria-label="Diagram of an event-driven microservice architecture I typically design">
+      <div class="cap"><span>typical topology</span><span>event-driven</span></div>
+      <svg viewBox="0 0 440 330" role="img" aria-hidden="true">
+        <!-- wires -->
+        <path id="w1" class="wire" d="M70 60 H150"/>
+        <path id="w2" class="wire" d="M230 60 H290 V100"/>
+        <path id="w3" class="wire" d="M190 80 V140"/>
+        <path id="w4" class="wire" d="M190 180 V215"/>
+        <path id="w5" class="wire" d="M150 240 H95 V275"/>
+        <path id="w6" class="wire" d="M230 240 H290 V275"/>
+        <path id="w7" class="wire" d="M330 120 V160 H230"/>
+        <path id="w8" class="wire" d="M190 260 V275"/>
+        <!-- nodes -->
+        <g class="node"><rect x="10" y="40" width="60" height="40" rx="8"/><text x="40" y="58" text-anchor="middle">client</text><text class="sub" x="40" y="71" text-anchor="middle">React</text></g>
+        <g class="node hl"><rect x="150" y="40" width="80" height="40" rx="8"/><text x="190" y="58" text-anchor="middle">gateway</text><text class="sub" x="190" y="71" text-anchor="middle">OAuth2 · JWT</text></g>
+        <g class="node"><rect x="290" y="100" width="130" height="40" rx="8"/><text x="355" y="118" text-anchor="middle">ai-agent</text><text class="sub" x="355" y="131" text-anchor="middle">PO · invoice flow</text></g>
+        <g class="node hl"><rect x="130" y="140" width="120" height="40" rx="8"/><text x="190" y="158" text-anchor="middle">order-service</text><text class="sub" x="190" y="171" text-anchor="middle">Spring Boot 17</text></g>
+        <g class="node ev"><rect x="150" y="215" width="80" height="45" rx="8"/><text x="190" y="235" text-anchor="middle">kafka</text><text class="sub" x="190" y="249" text-anchor="middle">events</text></g>
+        <g class="node"><rect x="40" y="275" width="110" height="40" rx="8"/><text x="95" y="293" text-anchor="middle">lambda</text><text class="sub" x="95" y="306" text-anchor="middle">SNS · SQS</text></g>
+        <g class="node"><rect x="160" y="275" width="60" height="40" rx="8"/><text x="190" y="293" text-anchor="middle">db</text><text class="sub" x="190" y="306" text-anchor="middle">Postgres</text></g>
+        <g class="node"><rect x="240" y="275" width="110" height="40" rx="8"/><text x="295" y="293" text-anchor="middle">billing-svc</text><text class="sub" x="295" y="306" text-anchor="middle">consumer</text></g>
+        <!-- packets -->
+        <g class="pkts">
+          <circle class="pkt" r="4"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle>
+          <circle class="pkt" r="4"><animateMotion dur="2.4s" begin=".6s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle>
+          <circle class="pkt" r="4"><animateMotion dur="3s" begin=".3s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle>
+          <circle class="pkt ev" r="4"><animateMotion dur="1.8s" begin="1s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle>
+          <circle class="pkt ev" r="4"><animateMotion dur="2.2s" begin="1.4s" repeatCount="indefinite"><mpath href="#w5"/></animateMotion></circle>
+          <circle class="pkt ev" r="4"><animateMotion dur="2.2s" begin="1.8s" repeatCount="indefinite"><mpath href="#w6"/></animateMotion></circle>
+          <circle class="pkt" r="4"><animateMotion dur="2.6s" begin="2s" repeatCount="indefinite"><mpath href="#w7"/></animateMotion></circle>
+          <circle class="pkt ev" r="3"><animateMotion dur="1.2s" begin=".9s" repeatCount="indefinite"><mpath href="#w8"/></animateMotion></circle>
+        </g>
+      </svg>
+    </figure>
+  </header>
+
+  <div class="stats" role="list">
+    <div class="stat" role="listitem"><b>18+</b><span>years building Java systems</span></div>
+    <div class="stat" role="listitem"><b>3</b><span>domains: healthcare, telecom, supply chain</span></div>
+    <div class="stat" role="listitem"><b>2</b><span>clouds in production: AWS and GCP</span></div>
+    <div class="stat" role="listitem"><b>UK·US·IN</b><span>clients including BT and Fresenius</span></div>
+  </div>
+
+  <section id="skills">
+    <div class="sec-head">
+      <div><div class="eyebrow">Toolbox</div><h2>Technical skills</h2></div>
+      <p>Grouped by area. Click any skill with a blue outline to see the projects where I used it.</p>
+    </div>
+    <div class="skills" id="skillgrid"></div>
+  </section>
+
+  <section id="capabilities">
+    <div class="sec-head">
+      <div><div class="eyebrow">What I bring</div><h2>Capabilities</h2></div>
+      <p>From system design to the CI/CD pipeline, I own a service through design, build, testing and running in production.</p>
+    </div>
+    <div class="caps">
+      <article class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="8.5" y="14" width="7" height="7" rx="1.5"/><path d="M6.5 10v2h11v-2M12 12v2"/></svg></div>
+        <h3>Microservices &amp; APIs</h3>
+        <p>REST and GraphQL services on Spring Boot, with JPA/Hibernate persistence and clean, versioned contracts.</p>
+        <div class="tags">Spring Boot · Spring Cloud · GraphQL</div>
+      </article>
+      <article class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></div>
+        <h3>Event-driven architecture</h3>
+        <p>Decoupled, reactive services with Kafka and SNS/SQS, including DLQs and circuit breakers for reliable async flows.</p>
+        <div class="tags">Kafka · SNS/SQS · Resilience4j</div>
+      </article>
+      <article class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Security &amp; identity</h3>
+        <p>Platform-wide authentication and authorization with Spring Security filter chains, OAuth2, JWT and API gateways.</p>
+        <div class="tags">OAuth2 · JWT · Apigee · WSO2</div>
+      </article>
+      <article class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 01-.5-8A6 6 0 0118 9a4.5 4.5 0 01-1 9H7z"/></svg></div>
+        <h3>Cloud architecture</h3>
+        <p>AWS designs with WAF, Route 53, NLB/ALB, ECS/EKS and Lambda, plus GCP Cloud Run. Infrastructure is written in Terraform.</p>
+        <div class="tags">AWS · GCP · Terraform · Kubernetes</div>
+      </article>
+      <article class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5l3 8M16 7.5l-3 8M8.5 6h7"/></svg></div>
+        <h3>Enterprise integration</h3>
+        <p>MuleSoft flows, connections to third-party systems and EHR platforms, and migrating MuleSoft apps to Java microservices.</p>
+        <div class="tags">MuleSoft · SAP · Odoo · EHR</div>
+      </article>
+      <article class="cap">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+        <h3>Agentic AI</h3>
+        <p>AI agents that run PO and invoice processes end to end, and agents that monitor logs and resolve issues.</p>
+        <div class="tags">LangChain · LangGraph · Claude Code</div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="sec-head">
+      <div><div class="eyebrow">Where I've applied these skills</div><h2>Project experience</h2></div>
+      <p>Click any technology to highlight the projects that used it.</p>
+    </div>
+    <div class="filterbar" id="filterbar" aria-live="polite"></div>
+    <div class="timeline">
+
+      <article class="job" data-stack="React|Java 17|Spring Boot|Spring MVC|Spring Security|Spring Data JPA|REST APIs|Microservices|MongoDB|GCP|AWS|Agentic AI|GitLab CI|JWT|LangChain|LangGraph">
+        <div class="meta">
+          <div class="client">Supply Chain Product</div>
+          <span class="domain">Supply chain</span>
+          <div class="roleT">Senior Architect</div>
+        </div>
+        <div>
+          <h3>AI-driven supply chain platform</h3>
+          <p class="ov">Supply chain orchestration covering client and supplier management, purchase orders, invoices, a chatbot and AI recommendations.</p>
+          <ul>
+            <li><strong>Built AI agents</strong> that complete the PO and invoice process end to end with minimal human input.</li>
+            <li>Built <strong>agentic log monitoring</strong> that finds and resolves issues automatically.</li>
+            <li>Designed <strong>platform-wide JWT authentication</strong> and authorization using Spring Security filter chains.</li>
+            <li>Built scheduled <strong>GCP Cloud Run</strong> jobs that pull PO data from customer SAP, Odoo and API sources.</li>
+            <li>Built scalable Spring Boot REST APIs and maintained CI/CD pipelines in GitLab.</li>
+          </ul>
+          <div class="chips"></div>
+        </div>
+      </article>
+
+      <article class="job" data-stack="MuleSoft|Java 17|Spring Boot|Spring MVC|Spring Security|Spring Data JPA|REST APIs|Microservices|PostgreSQL|AWS|AWS Lambda|SNS/SQS|Terraform|Jenkins|Maven|JWT">
+        <div class="meta">
+          <div class="client">Fresenius Medical Care</div>
+          <span class="domain">Healthcare</span>
+          <div class="roleT">Senior Java Engineer</div>
+        </div>
+        <div>
+          <h3>Intelex–CNA integration</h3>
+          <p class="ov">Healthcare workflow integrations for claims processing, billing, payment posting and denial management.</p>
+          <ul>
+            <li>Designed <strong>MuleSoft integrations and AWS Lambda services</strong> for claims and billing workflows.</li>
+            <li>Connected <strong>Intelex, CNA and EHR platforms</strong> so data moves between them without manual steps.</li>
+            <li>Built scheduled Lambda jobs that export database records to Intelex as JSON or Excel.</li>
+            <li>Used <strong>SNS/SQS</strong> for event notifications and automated email triggers.</li>
+            <li>Built infrastructure in <strong>Terraform</strong>, with CI/CD in Jenkins and Maven.</li>
+          </ul>
+          <div class="chips"></div>
+        </div>
+      </article>
+
+      <article class="job" data-stack="Java 17|Spring Boot|Spring MVC|Spring Security|Spring Data JPA|Hibernate|REST APIs|Microservices|Kafka|PostgreSQL|MuleSoft|AWS|OpenShift|Docker|Jenkins|Maven|JUnit 5|Mockito|SonarQube|Swagger|React">
+        <div class="meta">
+          <div class="client">Fresenius Medical Care</div>
+          <span class="domain">Healthcare</span>
+          <div class="roleT">Senior Java Engineer</div>
+        </div>
+        <div>
+          <h3>MuleSoft → Java microservices migration</h3>
+          <p class="ov">Migrated MuleSoft applications to Spring Boot services on OpenShift. The new event-driven system uses Kafka workflows and transactional SQL on AWS.</p>
+          <ul>
+            <li>Moved existing <strong>MuleSoft workflows to Spring Boot</strong> without breaking third-party integrations.</li>
+            <li>Built <strong>Kafka-based</strong> event flows to coordinate asynchronous transactions.</li>
+            <li>Built REST APIs that give operations teams real-time payment status and transaction history.</li>
+            <li>Designed Hibernate mappings for payment data, customer records and audit events.</li>
+            <li>Enforced quality gates with <strong>SonarQube</strong>, JUnit 5 and Mockito.</li>
+          </ul>
+          <div class="chips"></div>
+        </div>
+      </article>
+
+      <article class="job" data-stack="Java 8|Spring Boot|Spring MVC|REST APIs|Microservices|Kafka|SQL|Redis|SNS/SQS|AWS|S3|Maven|Docker|Jenkins|SonarQube|PMD|Mutual TLS">
+        <div class="meta">
+          <div class="client">British Telecom</div>
+          <span class="domain">Telecom · UK</span>
+          <div class="roleT">Senior SDE &amp; Architect</div>
+        </div>
+        <div>
+          <h3>BT Unified Trading Collaboration</h3>
+          <p class="ov">A unified communications platform for traders. I also worked on several other BT projects.</p>
+          <ul>
+            <li>Built the web toolbar and console plugins on Spring Boot.</li>
+            <li>Built <strong>synchronous and asynchronous</strong> messaging, including SQS/SNS flows with dead-letter queues.</li>
+            <li>Secured connections to downstream systems with <strong>mutual TLS (MASSL)</strong>.</li>
+            <li>Worked with platform teams to agree stable API contracts for internal apps and UI layers.</li>
+            <li>Ran Maven and Jenkins release pipelines with SonarQube and PMD quality checks.</li>
+          </ul>
+          <div class="chips"></div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <section class="contact" id="contact">
+    <div class="contact-card">
+      <div>
+        <div class="eyebrow" style="color:inherit;opacity:.6">Let's talk</div>
+        <h2 style="margin-top:8px">Building something that needs to scale?</h2>
+        <p>I'm happy to talk about architecture roles, platform modernization or bringing AI agents into your workflows.</p>
+      </div>
+      <div class="mailbox">
+        <div class="addr" id="email">dvinay82@gmail.com</div>
+        <div class="row">
+          <button class="btn" id="copyBtn" type="button">Copy email</button>
+          <a class="btn ghost" href="mailto:dvinay82@gmail.com">Open mail app</a>
+        </div>
+        <div class="toast" id="toast" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Vinay D · Senior Java Architect · India</span>
+    <span class="mono">java · spring · aws · gcp · ai</span>
+  </footer>
+</main>
+
+<script>
+(function(){
+  const skills = [
+    ["Languages & frameworks", ["Java 17","Java 8","Spring Boot","Spring MVC","Spring Cloud","Spring Data JPA","Spring Security","Hibernate","JPA","JDBC","Servlets","GraphQL","REST APIs","Microservices","MuleSoft"]],
+    ["Architecture", ["Event-driven","System design","Distributed systems","Design patterns","Resilience4j","SOLID","OOP"]],
+    ["Security", ["Spring Security","OAuth2","JWT","Apigee","WSO2","Mutual TLS"]],
+    ["Messaging", ["Kafka","SNS/SQS","DLQ"]],
+    ["Cloud", ["AWS","AWS Lambda","ECS","EKS","EC2","S3","RDS","DynamoDB","API Gateway","IAM","CloudWatch","GCP","OpenShift"]],
+    ["Databases", ["PostgreSQL","MySQL","Oracle","MongoDB","Couchbase","Redis","SQL"]],
+    ["DevOps & CI/CD", ["Docker","Kubernetes","Terraform","Jenkins","GitLab CI","Bamboo","Maven","Gradle","GitHub"]],
+    ["Testing & quality", ["JUnit 5","Mockito","MockMvc","Postman","Swagger","SonarQube","PMD","Splunk"]],
+    ["Frontend", ["React","JavaScript","HTML5","CSS","Node.js","jQuery"]],
+    ["AI tooling", ["Agentic AI","LangChain","LangGraph","Claude Code","GitHub Copilot","Cursor"]]
+  ];
+  const jobs = [...document.querySelectorAll('.job')];
+  const used = new Set();
+  jobs.forEach(j => j.dataset.stack.split('|').forEach(s => used.add(s)));
+
+  function chip(name){
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.textContent = name; b.dataset.skill = name;
+    if(!used.has(name)){ b.disabled = true; b.style.cursor = 'default'; b.style.color = 'var(--muted)'; }
+    b.addEventListener('click', () => setFilter(active === name ? null : name));
+    return b;
+  }
+  jobs.forEach(j => {
+    const box = j.querySelector('.chips');
+    j.dataset.stack.split('|').forEach(s => box.appendChild(chip(s)));
+  });
+  const grid = document.getElementById('skillgrid');
+  skills.forEach(([g, list]) => {
+    const row = document.createElement('div'); row.className = 'srow';
+    const h = document.createElement('h3'); h.textContent = g;
+    const c = document.createElement('div'); c.className = 'chips';
+    list.forEach(s => { const b = chip(s); if(used.has(s)) b.style.borderColor = 'var(--accent)'; c.appendChild(b); });
+    row.append(h, c); grid.appendChild(row);
+  });
+
+  let active = null;
+  const bar = document.getElementById('filterbar');
+  function setFilter(name){
+    active = name;
+    document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', c.dataset.skill === name));
+    let n = 0;
+    jobs.forEach(j => {
+      const has = name && j.dataset.stack.split('|').includes(name);
+      if(has) n++;
+      j.classList.toggle('match', !!has);
+      j.classList.toggle('dim', !!name && !has);
+    });
+    bar.innerHTML = '';
+    if(name){
+      const p = document.createElement('span'); p.className = 'pill';
+      p.textContent = name;
+      const x = document.createElement('button'); x.type = 'button'; x.setAttribute('aria-label','Clear filter'); x.textContent = '×';
+      x.onclick = () => setFilter(null);
+      p.appendChild(x);
+      const t = document.createElement('span'); t.textContent = n + (n === 1 ? ' project uses this' : ' projects use this');
+      bar.append(p, t);
+      if(!document.getElementById('experience').contains(document.activeElement)){
+        document.getElementById('experience').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+      }
+    }
+  }
+
+  // reduced motion: stop packets
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.pkts').forEach(g => g.remove());
+  }
+
+  // copy email
+  const btn = document.getElementById('copyBtn'), toast = document.getElementById('toast'), addr = document.getElementById('email');
+  btn.addEventListener('click', () => {
+    const fallback = () => { const r = document.createRange(); r.selectNodeContents(addr); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast.textContent = 'Selected. Press Ctrl/⌘ + C to copy.'; };
+    try {
+      navigator.clipboard.writeText(addr.textContent).then(() => { toast.textContent = 'Copied to clipboard'; }, fallback);
+    } catch(e){ fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
